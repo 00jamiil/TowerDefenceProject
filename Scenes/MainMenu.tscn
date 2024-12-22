@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://df7soeqbss754"]
+[gd_scene load_steps=5 format=3 uid="uid://df7soeqbss754"]
 
 [ext_resource type="FontFile" uid="uid://bs534y34j3l51" path="res://Themes/Fonts/Bangers-Regular.ttf" id="1_p1l1h"]
 [ext_resource type="Theme" uid="uid://ex4s3ej7oqkk" path="res://Themes/menu_panel.tres" id="2_ohqrr"]
+[ext_resource type="Script" path="res://Scripts/menu_panel.gd" id="3_qhcga"]
 
 [sub_resource type="Theme" id="Theme_dx6wj"]
 Label/font_sizes/font_size = 64
@@ -23,15 +24,16 @@ offset_bottom = 69.0
 theme = SubResource("Theme_dx6wj")
 text = "Menu"
 
-[node name="Panel" type="Panel" parent="."]
+[node name="MenuPanel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 64.0
 offset_right = 424.0
 offset_bottom = 544.0
 theme = ExtResource("2_ohqrr")
+script = ExtResource("3_qhcga")
 
-[node name="PlayLabel" type="Label" parent="Panel"]
+[node name="PlayLabel" type="Label" parent="MenuPanel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -44,7 +46,7 @@ grow_horizontal = 2
 theme = SubResource("Theme_dx6wj")
 text = "play"
 
-[node name="SettingsLabel" type="Label" parent="Panel"]
+[node name="SettingsLabel" type="Label" parent="MenuPanel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -57,7 +59,7 @@ grow_horizontal = 2
 theme = SubResource("Theme_dx6wj")
 text = "settings"
 
-[node name="ExitLabel" type="Label" parent="Panel"]
+[node name="ExitLabel" type="Label" parent="MenuPanel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
