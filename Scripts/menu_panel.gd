@@ -14,6 +14,19 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_up") and menu > 1:
 		menu -= 1;
 	
+	if menu == 1:
+		$PlayLabel.scale = Vector2(1.5,1)
+	else:
+		$PlayLabel.scale = Vector2(1,1)
 	
+	if menu == 2:
+		$SettingsLabel.scale = Vector2(1.5,1)
+	else:
+		$SettingsLabel.scale = Vector2(1,1)
+	
+	if menu == 3:
+		$ExitLabel.scale = Vector2(1.5,1)
+	else:
+		$ExitLabel.scale = Vector2(1,1)
 	
 	pass
