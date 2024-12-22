@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://df7soeqbss754"]
+[gd_scene load_steps=6 format=3 uid="uid://df7soeqbss754"]
 
 [ext_resource type="FontFile" uid="uid://bs534y34j3l51" path="res://Themes/Fonts/Bangers-Regular.ttf" id="1_p1l1h"]
 [ext_resource type="Theme" uid="uid://ex4s3ej7oqkk" path="res://Themes/menu_panel.tres" id="2_ohqrr"]
 [ext_resource type="Script" path="res://Scripts/menu_panel.gd" id="3_qhcga"]
+[ext_resource type="Script" path="res://Scripts/play_label.gd" id="4_1s1ns"]
 
 [sub_resource type="Theme" id="Theme_dx6wj"]
 Label/font_sizes/font_size = 64
@@ -45,6 +46,7 @@ offset_bottom = 69.0
 grow_horizontal = 2
 theme = SubResource("Theme_dx6wj")
 text = "play"
+script = ExtResource("4_1s1ns")
 
 [node name="SettingsLabel" type="Label" parent="MenuPanel"]
 layout_mode = 1
@@ -71,3 +73,7 @@ offset_bottom = 69.0
 grow_horizontal = 2
 theme = SubResource("Theme_dx6wj")
 text = "Exit"
+
+[connection signal="mouse_entered" from="MenuPanel/PlayLabel" to="MenuPanel/PlayLabel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MenuPanel/PlayLabel" to="MenuPanel/PlayLabel" method="_on_mouse_exited"]
+[connection signal="resized" from="MenuPanel/PlayLabel" to="MenuPanel/PlayLabel" method="_on_resized"]

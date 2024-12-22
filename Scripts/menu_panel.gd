@@ -1,6 +1,6 @@
 extends Panel
 
-var menu = 1;
+var menu = 3;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,6 +13,8 @@ func _process(delta: float) -> void:
 		menu += 1;
 	if Input.is_action_just_pressed("ui_up") and menu > 1:
 		menu -= 1;
+	if $PlayLabel.is_hovered:
+		menu = 1
 	
 	if menu == 1:
 		$PlayLabel.scale = Vector2(1.5,1)
