@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://byjkyd7hvlax"]
+
+[ext_resource type="Script" path="res://Scripts/panel.gd" id="1_mwamr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxshx"]
+bg_color = Color(0.187223, 0.298773, 0.286216, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.0353334, 0.281848, 0.250797, 1)
+
+[sub_resource type="Theme" id="Theme_ttm37"]
+Panel/styles/panel = SubResource("StyleBoxFlat_yxshx")
+
+[node name="TestingClicks" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme = SubResource("Theme_ttm37")
+script = ExtResource("1_mwamr")
+
+[node name="increaseButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 768.0
+offset_right = 768.0
+offset_bottom = 896.0
+text = "Increase By 1"
+
+[node name="DecreaseButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 1152.0
+offset_top = 768.0
+offset_right = 1664.0
+offset_bottom = 896.0
+text = "Decrease By 1"
+
+[node name="ScoreLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 296.0
+offset_right = 1152.0
+offset_bottom = 472.0
+theme_override_font_sizes/font_size = 128
+text = "Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NumberScoreLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 496.0
+offset_right = 1152.0
+offset_bottom = 672.0
+theme_override_font_sizes/font_size = 60
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Panel/increaseButton" to="Panel" method="_on_increase_button_pressed"]
+[connection signal="pressed" from="Panel/DecreaseButton" to="Panel" method="_on_decrease_button_pressed"]

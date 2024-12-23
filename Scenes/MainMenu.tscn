@@ -19,22 +19,24 @@ grow_vertical = 2
 
 [node name="MenuLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 186.0
-offset_right = 303.0
-offset_bottom = 69.0
+offset_left = 902.0
+offset_top = 144.0
+offset_right = 1020.0
+offset_bottom = 214.0
 theme = SubResource("Theme_dx6wj")
 text = "Menu"
 
 [node name="MenuPanel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 64.0
-offset_right = 424.0
-offset_bottom = 544.0
+offset_left = 780.0
+offset_top = 287.0
+offset_right = 1140.0
+offset_bottom = 767.0
 theme = ExtResource("2_ohqrr")
 script = ExtResource("3_qhcga")
 
 [node name="PlayLabel" type="Label" parent="MenuPanel"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -49,19 +51,21 @@ text = "play"
 script = ExtResource("4_1s1ns")
 
 [node name="SettingsLabel" type="Label" parent="MenuPanel"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -48.0
+offset_left = -98.5
 offset_top = 192.0
-offset_right = 48.0
-offset_bottom = 69.0
+offset_right = 98.5
+offset_bottom = 261.0
 grow_horizontal = 2
 theme = SubResource("Theme_dx6wj")
 text = "settings"
 
 [node name="ExitLabel" type="Label" parent="MenuPanel"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -74,6 +78,40 @@ grow_horizontal = 2
 theme = SubResource("Theme_dx6wj")
 text = "Exit"
 
+[node name="PlayButton" type="Button" parent="MenuPanel"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 64.0
+offset_right = 228.0
+offset_bottom = 133.0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Play"
+
+[node name="SettingsButton" type="Button" parent="MenuPanel"]
+layout_mode = 0
+offset_left = 81.5
+offset_top = 192.0
+offset_right = 278.5
+offset_bottom = 261.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_p1l1h")
+theme_override_font_sizes/font_size = 40
+text = "Settings"
+
+[node name="ExitButton" type="Button" parent="MenuPanel"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 320.0
+offset_right = 228.0
+offset_bottom = 389.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_p1l1h")
+theme_override_font_sizes/font_size = 40
+text = "Exit"
+
 [connection signal="mouse_entered" from="MenuPanel/PlayLabel" to="MenuPanel/PlayLabel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MenuPanel/PlayLabel" to="MenuPanel/PlayLabel" method="_on_mouse_exited"]
 [connection signal="resized" from="MenuPanel/PlayLabel" to="MenuPanel/PlayLabel" method="_on_resized"]
+[connection signal="mouse_entered" from="MenuPanel/PlayButton" to="MenuPanel" method="_on_play_button_mouse_entered"]
+[connection signal="mouse_exited" from="MenuPanel/PlayButton" to="MenuPanel" method="_on_play_button_mouse_exited"]
