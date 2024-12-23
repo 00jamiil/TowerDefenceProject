@@ -14,7 +14,7 @@
 	#if Input.is_action_just_pressed("ui_up") and menu > 1:
 		#menu -= 1;
 	#if $PlayLabel.get_rect().has_point(get_global_mouse_position()):
-		#menu = 1;
+		#menu = 1; 
 #
 #
 	#if menu == 1:
@@ -39,17 +39,16 @@ extends Panel
 
 func _on_play_button_mouse_entered() -> void:				#Play button Hover
 	$PlayButton.scale = Vector2(1.25, 1.25)					#Play button Hover
-	$PlayButton.position = Vector2(132-12, 64-8.625)		#Play button Hover
+	$PlayButton.add_theme_font_size_override("font_size",64)
 	pass													#Play button Hover
 	
 func _on_play_button_mouse_exited() -> void:				#Play button Exit Hover
 	$PlayButton.scale = Vector2(1, 1)						#Play button Exit Hover
-	$PlayButton.position = Vector2(132, 64)					#Play button Exit Hover
+	$PlayButton.add_theme_font_size_override("font_size",48)
 	pass													#Play button Exit Hover
 
 func _on_settings_button_mouse_entered() -> void:			#Settings button Hover
 	$SettingsButton.scale = Vector2(1.25, 1.25)				#Settings button Hover
-	$SettingsButton.position = Vector2(81.5-20.375, 192-6)	#Settings button Hover
 	pass # Replace with function body.						#Settings button Hover
 
 func _on_settings_button_mouse_exited() -> void:			#Settings button Exit Hover
