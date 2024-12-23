@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://df7soeqbss754"]
+[gd_scene load_steps=6 format=3 uid="uid://df7soeqbss754"]
 
+[ext_resource type="Texture2D" uid="uid://6c20grwv4ast" path="res://Sprites/5m0dj35v.bmp" id="1_1giyy"]
 [ext_resource type="FontFile" uid="uid://bs534y34j3l51" path="res://Themes/Fonts/Bangers-Regular.ttf" id="1_p1l1h"]
 [ext_resource type="Theme" uid="uid://ex4s3ej7oqkk" path="res://Themes/menu_panel.tres" id="2_ohqrr"]
 [ext_resource type="Script" path="res://Scripts/menu_panel.gd" id="3_qhcga"]
@@ -16,72 +17,48 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MenuLabel" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 902.0
-offset_top = 144.0
-offset_right = 1020.0
-offset_bottom = 214.0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_1giyy")
+
+[node name="MenuLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -59.0
+offset_top = 32.0
+offset_right = 59.0
+offset_bottom = 102.0
+grow_horizontal = 2
+pivot_offset = Vector2(59, 35)
 theme = SubResource("Theme_dx6wj")
 text = "Menu"
 
 [node name="MenuPanel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 780.0
-offset_top = 287.0
-offset_right = 1140.0
-offset_bottom = 767.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -160.0
+offset_right = 180.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("2_ohqrr")
 script = ExtResource("3_qhcga")
-
-[node name="PlayLabel" type="Label" parent="MenuPanel"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -48.0
-offset_top = 64.0
-offset_right = 48.0
-offset_bottom = 69.0
-grow_horizontal = 2
-theme = SubResource("Theme_dx6wj")
-text = "play"
-
-[node name="SettingsLabel" type="Label" parent="MenuPanel"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -98.5
-offset_top = 192.0
-offset_right = 98.5
-offset_bottom = 261.0
-grow_horizontal = 2
-theme = SubResource("Theme_dx6wj")
-text = "settings"
-
-[node name="ExitLabel" type="Label" parent="MenuPanel"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -48.0
-offset_top = 320.0
-offset_right = 48.0
-offset_bottom = 69.0
-grow_horizontal = 2
-theme = SubResource("Theme_dx6wj")
-text = "Exit"
 
 [node name="PlayButton" type="Button" parent="MenuPanel"]
 layout_mode = 0
 offset_left = 132.0
-offset_top = 64.0
+offset_top = 60.0
 offset_right = 228.0
-offset_bottom = 133.0
+offset_bottom = 129.0
 pivot_offset = Vector2(48, 34)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_p1l1h")
@@ -91,9 +68,9 @@ text = "Play"
 [node name="SettingsButton" type="Button" parent="MenuPanel"]
 layout_mode = 0
 offset_left = 81.5
-offset_top = 192.0
+offset_top = 150.0
 offset_right = 278.5
-offset_bottom = 261.0
+offset_bottom = 219.0
 pivot_offset = Vector2(98, 34)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_p1l1h")
@@ -103,17 +80,15 @@ text = "Settings"
 [node name="ExitButton" type="Button" parent="MenuPanel"]
 layout_mode = 0
 offset_left = 132.0
-offset_top = 320.0
+offset_top = 240.0
 offset_right = 228.0
-offset_bottom = 389.0
+offset_bottom = 309.0
+pivot_offset = Vector2(48, 34)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_p1l1h")
 theme_override_font_sizes/font_size = 40
 text = "Exit"
 
-[connection signal="mouse_entered" from="MenuPanel/PlayLabel" to="MenuPanel/PlayLabel" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="MenuPanel/PlayLabel" to="MenuPanel/PlayLabel" method="_on_mouse_exited"]
-[connection signal="resized" from="MenuPanel/PlayLabel" to="MenuPanel/PlayLabel" method="_on_resized"]
 [connection signal="mouse_entered" from="MenuPanel/PlayButton" to="MenuPanel" method="_on_play_button_mouse_entered"]
 [connection signal="mouse_exited" from="MenuPanel/PlayButton" to="MenuPanel" method="_on_play_button_mouse_exited"]
 [connection signal="pressed" from="MenuPanel/PlayButton" to="MenuPanel" method="_on_play_button_pressed"]

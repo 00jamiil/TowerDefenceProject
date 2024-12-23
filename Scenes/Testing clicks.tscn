@@ -23,33 +23,33 @@ grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_right = 1280.0
+offset_bottom = 720.0
 theme = SubResource("Theme_ttm37")
 script = ExtResource("1_mwamr")
 
 [node name="increaseButton" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 256.0
-offset_top = 768.0
-offset_right = 768.0
-offset_bottom = 896.0
+offset_left = 55.0
+offset_top = 546.0
+offset_right = 567.0
+offset_bottom = 674.0
 text = "Increase By 1"
 
 [node name="DecreaseButton" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 1152.0
-offset_top = 768.0
-offset_right = 1664.0
-offset_bottom = 896.0
+offset_left = 722.0
+offset_top = 546.0
+offset_right = 1234.0
+offset_bottom = 674.0
 text = "Decrease By 1"
 
 [node name="ScoreLabel" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 768.0
-offset_top = 296.0
-offset_right = 1152.0
-offset_bottom = 472.0
+offset_left = 456.0
+offset_top = 75.0
+offset_right = 840.0
+offset_bottom = 251.0
 theme_override_font_sizes/font_size = 128
 text = "Score"
 horizontal_alignment = 1
@@ -57,10 +57,10 @@ vertical_alignment = 1
 
 [node name="NumberScoreLabel" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 768.0
-offset_top = 496.0
-offset_right = 1152.0
-offset_bottom = 672.0
+offset_left = 456.0
+offset_top = 345.0
+offset_right = 840.0
+offset_bottom = 521.0
 theme_override_font_sizes/font_size = 60
 text = "0"
 horizontal_alignment = 1
@@ -68,10 +68,10 @@ vertical_alignment = 1
 
 [node name="BackButton" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 1728.0
-offset_top = 64.0
-offset_right = 1856.0
-offset_bottom = 192.0
+offset_left = 1099.0
+offset_top = 32.0
+offset_right = 1227.0
+offset_bottom = 160.0
 theme_override_font_sizes/font_size = 80
 text = "X"
 

@@ -1,70 +1,47 @@
-
-#
-#var menu = 3;
-#
-## Called when the node enters the scene tree for the first time.
-#func _ready() -> void:
-	#pass # Replace with function body.
-#
-#
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#if Input.is_action_just_pressed("ui_down") and menu < 3:
-		#menu += 1;
-	#if Input.is_action_just_pressed("ui_up") and menu > 1:
-		#menu -= 1;
-	#if $PlayLabel.get_rect().has_point(get_global_mouse_position()):
-		#menu = 1; 
-#
-#
-	#if menu == 1:
-		#$PlayLabel.scale = Vector2(1.5,1)
-	#else:
-		#$PlayLabel.scale = Vector2(1,1)
-	#
-	#if menu == 2:
-		#$SettingsLabel.scale = Vector2(1.5,1)
-	#else:
-		#$SettingsLabel.scale = Vector2(1,1)
-	#
-	#if menu == 3:
-		#$ExitLabel.scale = Vector2(1.5,1)
-	#else:
-		#$ExitLabel.scale = Vector2(1,1)
-	#
-	#pass
-
-#------------------------This is my new Code for the buttons ---------------------------------
 extends Panel
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	
+	pass
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("F4"):
+		if DisplayServer.window_get_mode()==DisplayServer.WINDOW_MODE_FULLSCREEN:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		else:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	pass
 
 func _on_play_button_mouse_entered() -> void:				#Play button Hover
 	$PlayButton.scale = Vector2(1.25, 1.25)					#Play button Hover
-	$PlayButton.add_theme_font_size_override("font_size",64)
+	$PlayButton.add_theme_font_size_override("font_size",48)
 	pass													#Play button Hover
 	
 func _on_play_button_mouse_exited() -> void:				#Play button Exit Hover
 	$PlayButton.scale = Vector2(1, 1)						#Play button Exit Hover
-	$PlayButton.add_theme_font_size_override("font_size",48)
+	$PlayButton.add_theme_font_size_override("font_size",40)
 	pass													#Play button Exit Hover
 
 func _on_settings_button_mouse_entered() -> void:			#Settings button Hover
 	$SettingsButton.scale = Vector2(1.25, 1.25)				#Settings button Hover
+	$SettingsButton.add_theme_font_size_override("font_size",48)
 	pass # Replace with function body.						#Settings button Hover
 
 func _on_settings_button_mouse_exited() -> void:			#Settings button Exit Hover
 	$SettingsButton.scale = Vector2(1, 1)					#Settings button Exit Hover
-	$SettingsButton.position = Vector2(81.5, 192)			#Settings button Exit Hover
+	$SettingsButton.add_theme_font_size_override("font_size",40)			#Settings button Exit Hover
 	pass # Replace with function body.						#Settings button Exit Hover
 
 func _on_exit_button_mouse_entered() -> void:				#Exit button Hover
 	$ExitButton.scale = Vector2(1.25, 1.25)					#Exit button Hover
-	$ExitButton.position = Vector2(132-11, 320-10)			#Exit button Hover
-	pass # Replace with function body.						#Exit button Hover
+	$ExitButton.add_theme_font_size_override("font_size",48) # Replace with function body.						#Exit button Hover
 
 func _on_exit_button_mouse_exited() -> void:				#Exit button Exit Hover
 	$ExitButton.scale = Vector2(1, 1)						#Exit button Exit Hover
-	$ExitButton.position = Vector2(132, 320)				#Exit button Exit Hover
-	pass # Replace with function body.						#Exit button Exit Hover
+	$ExitButton.add_theme_font_size_override("font_size",40) # Replace with function body.						#Exit button Exit Hover
 
 func _on_play_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Testing clicks.tscn")
