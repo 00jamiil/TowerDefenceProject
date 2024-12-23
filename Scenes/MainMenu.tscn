@@ -85,6 +85,7 @@ offset_top = 64.0
 offset_right = 228.0
 offset_bottom = 133.0
 theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_p1l1h")
 theme_override_font_sizes/font_size = 40
 text = "Play"
 
@@ -115,3 +116,10 @@ text = "Exit"
 [connection signal="resized" from="MenuPanel/PlayLabel" to="MenuPanel/PlayLabel" method="_on_resized"]
 [connection signal="mouse_entered" from="MenuPanel/PlayButton" to="MenuPanel" method="_on_play_button_mouse_entered"]
 [connection signal="mouse_exited" from="MenuPanel/PlayButton" to="MenuPanel" method="_on_play_button_mouse_exited"]
+[connection signal="pressed" from="MenuPanel/PlayButton" to="MenuPanel" method="_on_play_button_pressed"]
+[connection signal="mouse_entered" from="MenuPanel/SettingsButton" to="MenuPanel" method="_on_settings_button_mouse_entered"]
+[connection signal="mouse_exited" from="MenuPanel/SettingsButton" to="MenuPanel" method="_on_settings_button_mouse_exited"]
+[connection signal="pressed" from="MenuPanel/SettingsButton" to="MenuPanel" method="_on_settings_button_pressed"]
+[connection signal="mouse_entered" from="MenuPanel/ExitButton" to="MenuPanel" method="_on_exit_button_mouse_entered"]
+[connection signal="mouse_exited" from="MenuPanel/ExitButton" to="MenuPanel" method="_on_exit_button_mouse_exited"]
+[connection signal="pressed" from="MenuPanel/ExitButton" to="MenuPanel" method="_on_exit_button_pressed"]
