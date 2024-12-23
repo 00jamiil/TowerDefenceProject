@@ -19,8 +19,8 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("1_1giyy")
 
 [node name="MenuLabel" type="Label" parent="."]

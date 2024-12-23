@@ -1,7 +1,6 @@
 extends Panel
 
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -13,6 +12,18 @@ func _process(delta: float) -> void:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	
+	if Input.is_action_just_pressed("ui_accept"):
+		if Global._language == 0:
+			Global._language = 1;
+		else:
+			Global._language = 0;
+	
+	$PlayButton.text = Global._textPlayButton[Global._language];
+	$SettingsButton.text = Global._textSettingsButton[Global._language];
+	$ExitButton.text = Global._textExitButton[Global._language];
+	
+	
 	pass
 
 func _on_play_button_mouse_entered() -> void:				#Play button Hover
