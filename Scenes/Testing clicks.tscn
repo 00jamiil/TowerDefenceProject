@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/panel.gd" id="1_mwamr"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxshx"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3g2dc"]
 bg_color = Color(0.187223, 0.298773, 0.286216, 1)
 border_width_left = 8
 border_width_top = 8
@@ -11,7 +11,7 @@ border_width_bottom = 8
 border_color = Color(0.0353334, 0.281848, 0.250797, 1)
 
 [sub_resource type="Theme" id="Theme_ttm37"]
-Panel/styles/panel = SubResource("StyleBoxFlat_yxshx")
+Panel/styles/panel = SubResource("StyleBoxFlat_3g2dc")
 
 [node name="TestingClicks" type="Control"]
 layout_mode = 3

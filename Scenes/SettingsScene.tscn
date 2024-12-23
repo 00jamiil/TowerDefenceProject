@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://2vy4th7aee6h"]
+
+[ext_resource type="Script" path="res://Scripts/settings_panel.gd" id="1_poou5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ymsr"]
+bg_color = Color(0.482247, 0.354361, 0.482181, 1)
+
+[sub_resource type="Theme" id="Theme_37huq"]
+Panel/styles/panel = SubResource("StyleBoxFlat_0ymsr")
+
+[node name="SettingsScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme = SubResource("Theme_37huq")
+script = ExtResource("1_poou5")
+
+[node name="BackInSettingsButton" type="Button" parent="SettingsPanel"]
+offset_left = 1728.0
+offset_top = 64.0
+offset_right = 1856.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 80
+text = "X"
+
+[connection signal="pressed" from="SettingsPanel/BackInSettingsButton" to="SettingsPanel" method="_on_back_in_settings_button_pressed"]
